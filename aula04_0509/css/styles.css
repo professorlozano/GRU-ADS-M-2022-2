@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&display=swap');
+
+body {
+    background-image: url(../imagens/imagem_fundo.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+
+main{
+    background-color: rgba(216,191,216,0.6);
+    padding: 5px 40px;
+    margin-top: 20px;
+    border-radius:15px;
+    
+}
+
+.logo{
+    
+    text-align: center;
+}
+
+.manchete, .headline{
+    font-family: 'Aboreto', cursive;
+    color: white;
+    text-align: center;
+}
+
+.manchete{
+    font-size: 36px;
+}
+
+#headline{
+    font-family: 'Aboreto', cursive;
+    color: white;
+}
+
+#menu ul{
+    font-family: 'Aboreto', cursive;
+    padding: 0px;
+    margin: 0px;
+    background-color: #EDEDED;
+    list-style: none;
+}
+
+#menu ul li{
+    display: inline;
+}
+
+#menu ul li a{
+    padding: 2px 10px;
+    display: inline-block;
+    background-color: #EDEDED;
+    color:#333;
+    text-decoration: none;
+    border-bottom:3px solid #EDEDED;
+}
+
+#menu ul li a:hover{
+    background-color: #D6D6D6;
+    color:#6d6d6d;
+    border-bottom:3px solid #EA0000;
+}
+
+
+
+
+

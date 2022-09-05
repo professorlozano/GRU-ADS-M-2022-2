@@ -1,0 +1,32 @@
+h1{
+    text-align: center;
+    text-decoration: overline;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 3px 2px red;
+}
+
+h2{
+    text-align: left;
+    text-decoration: line-through;
+    text-transform: lowercase;
+    letter-spacing: -3px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h3{
+    text-align: right; 
+    text-decoration: underline;
+    text-transform: capitalize;
+    word-spacing: 5px;
+    font-style: italic;
+}
+
+h4{
+    text-align: justify;
+    text-decoration: none;
+    text-transform: none;
+    word-spacing: -5px;
+    font-style: oblique;
+    font-size: 30px;
+}
