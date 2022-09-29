@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    
+    //função com recebimento de argumentos (assinatura da função) e com retorno
+      function calcularMedia(argA1,argA2)
+      {
+        let media = argA1 + argA2
+        //console.log(`A sua media é ${media}`)
+        return media
+        
+      }
+
+      function verificarAprovacao(argMedia)
+      {
+        if(argMedia >= 6)
+        {
+            console.log('Voce esta aprovado!!!')
+        }
+        else{
+            console.log('Voce esta de AF')
+        }
+      }
+
+      let retorno = calcularMedia(5,3)
+      verificarAprovacao(retorno)
+      
+    </script>
+    
+    
+</body>
+</html>
