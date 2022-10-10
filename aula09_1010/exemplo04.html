@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora de Notas</title>
+</head>
+<body>
+    <h1>Calculadora de Média do Aluno</h1>
+    <p>
+        Digite a nota 1:
+        <input type="text" id="n1">
+    </p>
+    <p>
+        Digite a nota 2:
+        <input type="text" id="n2">
+    </p> 
+    <p>
+        Digite a nota 3:
+        <input type="text" id="n3">
+    </p>  
+    <p>
+        <input type="button" value="Calcular" onclick="pegarDados()">
+    </p>
+
+    <p>
+        <h2 id="res"></h2>
+        <h2 id="status"></h2>
+    </p>
+
+    <script>
+
+        function pegarDados(){
+            let nota1 = Number(document.getElementById("n1").value)
+            let nota2 = Number(document.getElementById("n2").value)
+            let nota3 = Number(document.getElementById("n3").value)
+            calcular(nota1, nota2, nota3);
+           
+        }
+
+        function calcular(argNota1, argNota2, argNota3){
+           let resultado = (argNota1 + argNota2 + argNota3)/3
+           classificar(resultado);//chamada a função classificar
+        }
+
+        function classificar(argResultado){
+            let status;
+
+            if (argResultado >= 6){
+                status = "Aprovado"
+            }
+            else if(argResultado < 3){
+                status = "Reprovado"
+            }
+            else{
+                status = "Exame"
+            }
+            imprimirDados(argResultado, status)
+            
+        }
+
+        function imprimirDados(argResultado, argStatus){
+            document.getElementById("res").innerHTML = `A média é: ${argResultado}` 
+            document.getElementById("status").innerHTML = `O aluno está ${argStatus}`
+        }
+    </script>
+</body>
+</html>

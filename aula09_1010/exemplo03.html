@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora de Notas</title>
+</head>
+<body>
+    <h1>Calculadora de Média do Aluno</h1>
+    <p>
+        Digite a nota 1:
+        <input type="text" id="n1">
+    </p>
+    <p>
+        Digite a nota 2:
+        <input type="text" id="n2">
+    </p> 
+    <p>
+        Digite a nota 3:
+        <input type="text" id="n3">
+    </p>  
+    <p>
+        <input type="button" value="Calcular" onclick="calcular()">
+    </p>
+
+    <p>
+        <h2 id="res"></h2>
+        <h2 id="status"></h2>
+    </p>
+
+    <script>
+        function calcular(){
+           //entrada
+           let nota1;
+           let nota2;
+           let nota3;
+           
+           nota1 = Number(document.getElementById("n1").value)
+           nota2 = Number(document.getElementById("n2").value)
+           nota3 = Number(document.getElementById("n3").value)
+           //processamento
+           let resultado = (nota1 + nota2 + nota3)/3
+           classificar(resultado);//chamada a função classificar
+           //saída
+           document.getElementById("res").innerHTML = `A média é: ${resultado}` 
+        }
+
+        function classificar(argResultado){
+            let status;
+
+            if (argResultado >= 6){
+                status = "Aprovado"
+            }
+            else if(argResultado < 3){
+                status = "Reprovado"
+            }
+            else{
+                status = "Exame"
+            }
+            document.getElementById("status").innerHTML = `O aluno está ${status}`
+        }
+    </script>
+</body>
+</html>
