@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8"> <!-- Seleciona a cadeia de caracteres para o padrão de acentução que usamos no português -->
+        <link rel="stylesheet" type="text/css" href="styles.css" /> <!-- Faz o link para o caminho do arquivo css-->
+        <title>Manipulando o Estilo do Site pela DOM</title> <!-- Nome da abinha do navegador  -->
+    </head>
+    <body>
+        <div id="manipula">
+            <p>Com base nos argumentos apresentados na aula, é possivel entender que
+            uma coisa é uma coisa e outra coisa é outra coisa, admito que não concordo nem discordo,
+            muito pelo contrário.</p> 
+            <p class="paragrafo">É factivel que a Terra é um dos planetas mais conhecidos
+            do mundo, mesmo sabendo que a vida é uma sucessão de sucessivos que sucedem sucessivamente sem cessar. 
+            Agora, mais do que nunca, é a hora, afinal, o importante é o que importa, pois onde quer que você esteja,
+            você sempre estará lá.</p>
+        </div>
+        <br>
+        <hr>
+
+        <h2 class="chamada">Altere o texto acima clicando nos botões</h2>
+
+    <div id="botoes">
+
+        <!--Botão 1 - Atualizar - Atualiza a página para desfazer mudançcas da DOM-->
+        <input onClick="window.location.reload()" type="button" value="Atualizar"/> 
+
+        <!--Botão 2 - Tamanho da Fonte - Modifica o tamanho da fonte para o tamanho especificado no script-->
+        <input onClick="mudaTamanhoFonte()" type="button" value="Tamanho Fonte"/> 
+
+        <!--Botão 3 - Mofifica a cor da fonte para a cor especificada no script-->
+        <input onClick="mudaCorFonte()" type="button" value="Cor Fonte"/>
+
+        <!--Botão 4 - Background Div - Modifica a cor do background da DIV para a cor especificada no script-->
+        <input onClick="mudaBackground()" type="button" value="Background DIV"/>
+
+        <!--Botão 5 - Italico - Modifica a fonte dos parágrafos para italico-->
+        <input onclick="mudaItalico()" type="button" value="Italico"/>
+
+        <!--Botão 6 - Negrito - Modifica a fonte dos parágrafos para negrito-->
+        <input onclick="mudaNegrito()" type="button" value="Negrito"/>
+
+        <!--Botão 7 - Incluir Borda - Inclui uma borda preta em volta da div-->
+        <input onclick="incluiBorder()" type="button" value="Inclui Border"/>
+
+        <!--Botão 8 - Excluir Borda - Exclui a border adicionada anteriormente na DIV-->
+        <input onclick="excluiBorder()"type="button" value="Excluir Border"/>
+
+        <!--Botão 9 - Esconde a DIV - Faz a DIV parar de ser visivel-->
+        <input onclick="escondeDiv()"type="button" value="Esconde DIV"/>
+
+        <!--Botão 10 - Reaparece DIV - Faz a DIV ser visivel novamente-->
+        <input onclick="reapareceDiv()" type="button" value="Reaparece DIV"/>
+
+        <!--Botão 11 - Não - Altera o texto dentro da tag h2 pela classe-->
+        <input onclick="nao()" type="button" value="Nao"/>
+
+        <!--Botão 12 - Background P - Muda a cor do background apenas do paragrafo de classe paragrafo-->
+        <input onclick="backgroundP()" type="button" value="Background P"/>
+
+        <!--Botao 13 - Cor do Botao - Muda a cor apenas de um botao pelo nome da tag input-->
+        <input onclick="mudaCorBotaoUnico()" type="button" value="Cor Botao"/>
+
+        <!--Botao 14 - Cor todos Botoes - Muda a cor  de todos os botoes pelo nome da tag input-->
+        <input onclick="mudaCorTodosBotoes()" type="button" value="Cor Botoes"/>
+
+        <!--Botao 15 - Conta Botao - Conta quantos botoes existem na página-->
+        <input onclick="contaBotao()" type="button" value="Conta Botao"/>  
+
+        <!--Botao 16 - Censura - Substituir o paragrafo por ********-->
+        <input onclick="censura()" type="button" value="Censura"/>
+
+        <!--Botao 17 - Fundo - Troca a cor do background da pagina-->
+        <input onclick="fundo()" type="button" value="Fundo"/>
+
+        <!--Botão 18 - Se formar, é o que acontece com o aluno formado-->
+        <input onclick="imagem()" type="button" value="Aluno Formado"/>
+    
+    </div>    
+
+    <img id="image" src="xuxa.jpg">
+
+        <script> //começa a brincadeira com JavaScript
+            //Botão 2 - Tamanho da Fonte - Função
+            function mudaTamanhoFonte(){
+                document.getElementById("manipula").style.fontSize = "20pt";
+            }
+
+            //Botão 3 - Cor da Fonte - Função
+            function mudaCorFonte(){
+                document.getElementById("manipula").style.color = "#ffffff";
+            }
+
+            //Botão 4 - Background - Função
+            function mudaBackground(){
+                document.getElementById("manipula").style.backgroundColor = "black";
+            }
+
+            //Botão 5 - Italico - Função
+            function mudaItalico(){
+                document.getElementById("manipula").style.fontStyle = "italic";
+            }
+
+            //Botão 6 - Negrito - Função
+            function mudaNegrito(){
+                document.getElementById("manipula").style.fontWeight = "bold";
+            }
+            
+            //Botão 7 - Inclui Border - Função
+            function incluiBorder(){
+                document.getElementById("manipula").style.border = "2px solid black";
+            }
+
+            //Botão 8 - Exclui Border - Função
+            function excluiBorder(){
+                document.getElementById("manipula").style.border = "0px";
+            }
+
+            //Botão 9 - Esconde DIV - Função
+            function escondeDiv(){
+                document.getElementById("manipula").style.display = "none";
+            }
+
+            //Botão 10 - Reaparece DIV - Função
+            function reapareceDiv(){
+                document.getElementById("manipula").style.display = "block";
+            }
+
+            //Botão 11 - Não - Função
+            function nao(){
+                document.getElementsByClassName("chamada")[0].innerHTML = "Nesse botão NÃO";
+            }
+
+            //Botão 12 - Background P - Função
+            function backgroundP(){
+                document.getElementsByClassName("paragrafo")[0].style.backgroundColor = "red";
+            }
+
+            //Botao 13 - Cor Botao - Funcao
+            function mudaCorBotaoUnico(){
+                document.getElementsByTagName("input")[10].style.backgroundColor = "lightblue";
+            }
+
+            //Botao 14 - Cor Botoes - Funcao
+            function mudaCorTodosBotoes(){
+                var y = document.getElementsByTagName("input");
+                var i;
+
+                for(i = 0; i < y.length; i++){
+                    y[i].style.backgroundColor = "lightblue";
+                }
+            }
+
+            //Botao 15 - Conta Botao - Função
+            function contaBotao(){
+                let x = document.getElementsByTagName("input");
+                document.getElementById("manipula").innerHTML = x.length;
+            }
+
+            //Botao 16 - Censura - Função
+            function censura(){
+                //document.getElementsByClassName("paragrafo")[0].innerHTML = "********";
+                document.querySelector("p.paragrafo").innerHTML = "**********";
+            }
+
+            //Botao 17 - Fundo - Função
+            function fundo(){
+                document.querySelector("body").style.backgroundColor = "lightblue";
+            }
+
+            //Botao 18 - Se formar - Funçao
+            function imagem(){
+                var img = document.querySelector("#image");
+                img.setAttribute('src','alien.jpg');
+            }
+
+
+        </script> <!-- termina a brincadeira com JavaScript -->
+    </body>
+</html>
